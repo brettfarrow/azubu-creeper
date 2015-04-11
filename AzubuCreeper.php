@@ -23,6 +23,7 @@ class AzubuCreeper {
 	// and will return 0 when it happens. So it makes one extra request by design.
 	public function beginCreeping () {
 		$streamInfo = $this->getStreamInfo($this->getRequestURL()); // get the ball rolling.
+		$this->updateStreamDB($streamInfo);
 	}
 	
 	public function getStreamInfo ($apiURL) {
