@@ -13,7 +13,8 @@ class AzubuCreeper {
 	public $streamInfo;	
 	
 	public function __construct($game) {
-		$this->azubuGame = str_replace(" ", "-", $game); // Use dashes instead of spaces in call.
+		// Game info needs dashes instead of spaces, and has to be all lowercase to return any results.
+		$this->azubuGame = strtolower(str_replace(" ", "-", $game));
 		$this->requestURL = BASE_URL . $this->azubuGame;
 	}
 	
@@ -29,7 +30,6 @@ class AzubuCreeper {
 		curl_setopt($ch, CURLOPT_URL, $apiURL);
 		curl_setopt($ch, CURLOPT_HEADER, 0);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array($clientIDHeader));
 
 		$data = curl_exec($ch);
 
