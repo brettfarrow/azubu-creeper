@@ -1,4 +1,4 @@
-# Twitch Creeper 
+# Azubu Creeper 
 
 ## Requirements
 - PHP (tested on v5.5.9)
